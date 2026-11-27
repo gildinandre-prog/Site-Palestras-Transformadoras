@@ -32,6 +32,28 @@ a{color:#F59E0B}a:hover{color:#FBBF24}
 .quote-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(17,17,17,0) 30%,rgba(17,17,17,.72) 55%,rgba(17,17,17,.92) 100%)}
 .quote-box{position:absolute;inset:0;display:flex;align-items:center;justify-content:flex-end}
 @media (max-width:820px){.quote-sec img{height:380px!important;object-position:22% 0%!important}.quote-shade{display:none}.quote-box{position:static;padding-top:32px;padding-bottom:40px}}
+.menu-btn{display:none}
+@media (max-width:820px){
+.hdr{flex-wrap:wrap;gap:10px 12px!important;padding-top:10px!important;padding-bottom:10px!important}
+.hdr>a:first-child{order:1;margin-right:auto}
+.hdr-cta{order:2;min-height:44px!important;padding:0 16px!important;font-size:14px}
+.menu-btn{order:3;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid #3A3A3A;border-radius:12px;background:transparent;color:#F5F5F4;cursor:pointer}
+.nav-main{order:4;display:none!important;flex-basis:100%;flex-direction:column;gap:0!important;padding:4px 0 8px}
+.site-header.open .nav-main{display:flex!important}
+.nav-main a{padding:12px 4px;border-top:1px solid #242424;font-size:16px!important}
+.hero{padding-top:24px!important;padding-bottom:48px!important;gap:28px!important}
+.hero-photo{order:-1;flex-basis:100%!important;max-width:100%!important}
+.hero-img{aspect-ratio:1/1!important;object-position:50% 12%}
+section[style*="padding-top: 96px"]{padding-top:64px!important}
+section[style*="padding-bottom: 96px"]{padding-bottom:64px!important}
+section[style*="padding: 96px 0"]{padding:64px 0!important}
+div[style*="padding: 40px; border-radius: 24px"]{padding:28px 22px!important}
+.card{padding:22px!important}
+.field{min-width:0;flex-basis:100%!important}
+.btn{white-space:normal;text-align:center;line-height:1.25;padding-top:10px;padding-bottom:10px}
+section[id] a.btn{max-width:100%}
+.h2{font-size:clamp(26px,7.5vw,34px)!important}
+}
 @keyframes rolar{to{transform:translateX(calc(-50% - 8px))}}
 @media (max-width:640px){.logo{height:72px;padding:10px 16px}.logo img{max-width:130px}}
 @media (prefers-reduced-motion:reduce){.track{animation:none;flex-wrap:wrap;width:auto;justify-content:center}.dup{display:none}.marquee{-webkit-mask-image:none;mask-image:none}}
@@ -41,10 +63,10 @@ a{color:#F59E0B}a:hover{color:#FBBF24}
 <body>
 <div style="font-family: Inter, sans-serif; color: #E7E7E4; background: #111111; line-height: 1.6; font-size: 17px">
 
-<header style="position: sticky; top: 0; z-index: 10; background: rgba(17,17,17,0.94); border-bottom: 1px solid #242424">
-<div class="wrap" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; padding-top: 14px; padding-bottom: 14px">
+<header id="topo-menu" class="site-header" style="position: sticky; top: 0; z-index: 10; background: rgba(17,17,17,0.94); border-bottom: 1px solid #242424">
+<div class="wrap hdr" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; padding-top: 14px; padding-bottom: 14px">
 <a href="#topo" style="font-family: Poppins, sans-serif; font-weight: 700; font-size: 20px; color: #F5F5F4; text-decoration: none">Andre Gildin<span style="color: #F59E0B">.</span></a>
-<nav aria-label="Principal" style="display: flex; flex-wrap: wrap; gap: 4px 22px; font-size: 15px">
+<nav id="nav-principal" class="nav-main" aria-label="Principal" style="display: flex; flex-wrap: wrap; gap: 4px 22px; font-size: 15px">
 <a href="#sobre" style="color: #C9C9C4; text-decoration: none">Sobre</a>
 <a href="#palestras" style="color: #C9C9C4; text-decoration: none">Palestras</a>
 <a href="#ia-canvas" style="color: #C9C9C4; text-decoration: none">IA Canvas</a>
@@ -53,11 +75,12 @@ a{color:#F59E0B}a:hover{color:#FBBF24}
 <a href="#midia" style="color: #C9C9C4; text-decoration: none">Mídia</a>
 <a href="#rkkg" style="color: #C9C9C4; text-decoration: none">RKKG</a>
 </nav>
-<a class="btn btn-p" href="#contato" style="min-height: 44px; padding: 0 22px">Contrate</a>
+<a class="btn btn-p hdr-cta" href="#contato" style="min-height: 44px; padding: 0 22px">Contrate</a>
+<button type="button" class="menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-principal"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
 </div>
 </header>
 
-<section id="topo" class="wrap" style="display: flex; flex-wrap: wrap; align-items: center; gap: 48px; padding-top: 72px; padding-bottom: 72px">
+<section id="topo" class="wrap hero" style="display: flex; flex-wrap: wrap; align-items: center; gap: 48px; padding-top: 72px; padding-bottom: 72px">
 <div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
 <p class="eyebrow">Palestras transformadoras · IA · Inovação · Agro</p>
 <h1 style="font-family: Poppins, sans-serif; font-weight: 800; font-size: clamp(40px, 5.6vw, 68px); line-height: 1.05; margin: 0; color: #F5F5F4">Estratégia e liderança na era dos <span style="color: #F59E0B">agentes de IA</span></h1>
@@ -68,8 +91,8 @@ a{color:#F59E0B}a:hover{color:#FBBF24}
 </div>
 <p style="margin: 0; display: inline-flex; align-items: center; gap: 10px; font-size: 15px; color: #E7E7E4"><span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 50%; background: #22C55E"></span>Agenda aberta para 2027 · presencial e online · PT, EN, ES</p>
 </div>
-<div style="flex: 1 1 340px; max-width: 460px; margin: 0 auto">
-<img src="andre-gildin-retrato.jpg" alt="Andre Gildin, palestrante, de braços cruzados com camisa branca" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 24px; display: block; filter: grayscale(1)">
+<div class="hero-photo" style="flex: 1 1 340px; max-width: 460px; margin: 0 auto">
+<img class="hero-img" src="andre-gildin-retrato.jpg" alt="Andre Gildin, palestrante, de braços cruzados com camisa branca" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 24px; display: block; filter: grayscale(1)">
 </div>
 </section>
 
@@ -350,6 +373,13 @@ a{color:#F59E0B}a:hover{color:#FBBF24}
       .catch(function(){st.textContent=falha; st.style.color='#FCA5A5';})
       .then(function(){bt.disabled=false; bt.textContent='Solicitar proposta';});
   });
+})();
+</script>
+<script>
+(function(){
+  var h=document.getElementById('topo-menu'),b=h.querySelector('.menu-btn');
+  b.addEventListener('click',function(){var o=h.classList.toggle('open');b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Fechar menu':'Abrir menu');});
+  h.querySelectorAll('.nav-main a').forEach(function(a){a.addEventListener('click',function(){h.classList.remove('open');b.setAttribute('aria-expanded','false');});});
 })();
 </script>
 </body>
